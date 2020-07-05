@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4c08e1e-360c-4f98-8e7d-7baaea4d8f00" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cP2Dke8EsXU1BPvYTBsYaQ4f6c" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/leetcode" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\WebStorm-2019.2.4\WebStorm 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/mymusic/src/store/index.js" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/neteascloudmusic/src" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\作品\NeteaseCloudMusic\mymusic\src\components\common\play" />
+      <recent name="I:\作品\NeteaseCloudMusic\mymusic\src" />
+      <recent name="I:\作品\NeteaseCloudMusic\mymusic\src\views" />
+      <recent name="I:\作品\NeteaseCloudMusic\mymusic\src\store" />
+      <recent name="I:\作品\NeteaseCloudMusic\mymusic\src\assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.Recommend.vue">
+    <configuration name="MyPlayer.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NeteaseCloudMusic/mymusic/src/components/common/play/MyPlayer.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Recommend.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NeteaseCloudMusic/mymusic/src/views/recommend/Recommend.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NeteaseCloudMusic/mymusic/src/components/common/play/test.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Recommend.vue" />
+        <item itemvalue="JavaScript Debug.MyPlayer.vue" />
+        <item itemvalue="JavaScript Debug.test.vue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4c08e1e-360c-4f98-8e7d-7baaea4d8f00" name="Default Changelist" comment="" />
+      <created>1590415789156</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590415789156</updated>
+      <workItem from="1590415790406" duration="641000" />
+      <workItem from="1590416483697" duration="251000" />
+      <workItem from="1590455085393" duration="11193000" />
+      <workItem from="1590476686284" duration="9864000" />
+      <workItem from="1590541662027" duration="943000" />
+      <workItem from="1590542820140" duration="7677000" />
+      <workItem from="1590554956879" duration="4118000" />
+      <workItem from="1590559328117" duration="13523000" />
+      <workItem from="1590581838072" duration="6754000" />
+      <workItem from="1590627317755" duration="24000" />
+      <workItem from="1590628235556" duration="8111000" />
+      <workItem from="1590645619712" duration="24538000" />
+      <workItem from="1590714264396" duration="8843000" />
+      <workItem from="1590733009543" duration="12823000" />
+      <workItem from="1590749773921" duration="8508000" />
+      <workItem from="1590801705799" duration="4476000" />
+      <workItem from="1590806202435" duration="4051000" />
+      <workItem from="1590827912479" duration="4493000" />
+      <workItem from="1590832912744" duration="7000" />
+      <workItem from="1590887643799" duration="8326000" />
+      <workItem from="1590904948407" duration="6610000" />
+      <workItem from="1590973354040" duration="96000" />
+      <workItem from="1590973463988" duration="707000" />
+      <workItem from="1590992317212" duration="7337000" />
+      <workItem from="1591059452002" duration="419000" />
+      <workItem from="1591064619898" duration="611000" />
+      <workItem from="1591340392241" duration="2180000" />
+      <workItem from="1593136988170" duration="1085000" />
+      <workItem from="1593172251021" duration="24000" />
+      <workItem from="1593396818685" duration="939000" />
+      <workItem from="1593399718795" duration="271000" />
+      <workItem from="1593400661844" duration="249000" />
+      <workItem from="1593401250319" duration="309000" />
+      <workItem from="1593402076150" duration="1258000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="164" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590457790940">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="164" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1590457790940" />
+    <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1590458169078">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1590458169078" />
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1590562395574">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1590562395574" />
+    <state width="1578" height="270" key="GridCell.Tab.0.bottom" timestamp="1590544179272">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590544179272" />
+    <state width="1578" height="270" key="GridCell.Tab.0.center" timestamp="1590544179272">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590544179272" />
+    <state width="1578" height="270" key="GridCell.Tab.0.left" timestamp="1590544179272">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590544179272" />
+    <state width="1578" height="270" key="GridCell.Tab.0.right" timestamp="1590544179272">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590544179272" />
+    <state width="1578" height="270" key="GridCell.Tab.1.bottom" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.1.center" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.1.left" timestamp="1590544179272">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1590544179272" />
+    <state width="1578" height="270" key="GridCell.Tab.1.right" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.2.bottom" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.2.center" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.2.left" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.2.right" timestamp="1590544179273">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1590544179273" />
+    <state width="1578" height="270" key="GridCell.Tab.3.bottom" timestamp="1590544179274">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.3.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590544179274" />
+    <state width="1578" height="270" key="GridCell.Tab.3.center" timestamp="1590544179274">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.3.center/0.0.1600.860@0.0.1600.860" timestamp="1590544179274" />
+    <state width="1578" height="270" key="GridCell.Tab.3.left" timestamp="1590544179274">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.3.left/0.0.1600.860@0.0.1600.860" timestamp="1590544179274" />
+    <state width="1578" height="270" key="GridCell.Tab.3.right" timestamp="1590544179274">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="270" key="GridCell.Tab.3.right/0.0.1600.860@0.0.1600.860" timestamp="1590544179274" />
+    <state x="456" y="190" key="run.anything.popup" timestamp="1590559261777">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="190" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1590559261777" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1590567942544">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1590567942544" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

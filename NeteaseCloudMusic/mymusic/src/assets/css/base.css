@@ -1,0 +1,50 @@
+/*适配*/
+/*@media screen and (width: 1920px) {*/
+/*    html { font-size: 100px;min-width: 100%;}*/
+/*}*/
+/*@media screen and (min-width: 1024px) {*/
+/*    html {font-size: 53.33333333px !important; }*/
+/*}*/
+/*@media screen and (min-width: 1366px) {*/
+/*    html {font-size: 71.14583333px !important;}*/
+/*}*/
+/*@media screen and (min-width: 1280px) {*/
+/*    html { font-size: 66.66666667px !important;}*/
+/*}*/
+/*@media screen and (min-width: 1440px) {*/
+/*    html {  font-size: 75px !important;}*/
+/*}*/
+/*@media screen and (min-width: 1600px) {*/
+/*    html { font-size: 83.33333333px !important}*/
+/*}*/
+/*@media screen and (min-width: 1920px) {*/
+/*    html {font-size: 100px !important;}*/
+/*}*/
+
+
+@media screen and (width: 1920px) {
+    html { font-size: 20px;min-width: 100%;}
+}
+/*@media screen and (min-width: 1024px) {*/
+/*    html {font-size: 10.6666666666px !important; }*/
+/*}*/
+/*@media screen and (min-width: 800px) {*/
+/*    html { font-size: 10px !important}*/
+/*}*/
+@media screen and (min-width: 1366px) {
+    html {font-size: 14.2291666666px !important;}
+}
+@media screen and (min-width: 1280px) {
+    html { font-size: 13.333333332px !important;}
+}
+@media screen and (min-width: 1440px) {
+    html {  font-size: 15px !important;}
+}
+@media screen and (min-width: 1600px) {
+    html { font-size: 16.66666666px !important}
+}
+@media screen and (min-width: 1920px) {
+    html {font-size: 20px !important;}
+}
+
+

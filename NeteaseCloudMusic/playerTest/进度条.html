@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <title>进度条</title>
+</head>
+<body>
+<div class="range">
+    <!--进度条[路程/时间=速度][进度总长度、改变后的进度总长度=每秒走过的进度]-->
+    <div id="all_time" style="background-color:rgb(220,220,220);height: 5px;">
+        <div id="now_time" style="background-color:rgb(120,120,120);height: 5px">
+            <!--        速度，值为 限制路程除以时间-->
+        </div>
+    </div>
+    <!--显示进度数据-->
+    <span id="progress" style="font-size: 1rem;color: white"></span>
+    <br>
+    <audio id="audio" src="../mymusic/src/assets/music/有幸.mp3" loop></audio>
+    <button onclick="start()">播放/暂停</button>
+</div>
+
+<script type="text/javascript" src="进度条.js"></script>
+</body>
+</html>
