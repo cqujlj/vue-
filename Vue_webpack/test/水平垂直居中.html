@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+    <style>
+<!--水平居中-->
+        body{
+            height:600px;
+            width: 100%;
+            overflow: hidden;
+        }
+.box{
+    height: 200px;
+    width: 120px;
+    background: #cd9e9d;
+    border:1px solid black;
+}
+
+body{
+    position: relative;
+}
+    /*    第一种定位方式  需要知道具体宽高*/
+
+    /*.box{*/
+    /*    position: absolute;*/
+    /*    top: 50%;*/
+    /*    left:50%;*/
+    /*    margin-top: -50px;*/
+    /*    margin-left: -100px;*/
+    /*}*/
+    /*第二种方式 有具体宽高  但不用考虑*/
+
+    /*.box{*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    right: 0;*/
+    /*    bottom: 0;*/
+    /*    margin: auto;*/
+    /*    }*/
+
+    /*第三种  可以不要宽高 */
+
+    /*.box{*/
+    /*    position: absolute;*/
+    /*    top:50%;*/
+    /*    left: 50%;*/
+    /*    transform: translate(-50%,-50%);*/
+    /*}*/
+
+    /*    第四种 弹性盒子*/
+body{
+
+    display: flex;
+    /*控制元素在主轴的对齐方式*/
+    justify-content: center;
+    /*控制默认的一行的对齐方式*/
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+}
+.box{
+    text-align: center;
+    width: 200px;
+    height: 120px;
+    box-sizing: border-box;
+    background: #cd9e9d;
+    border: 1px solid black;
+    flex: 1;
+    margin: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="box" id="box1">  hello</div>
+<div class="box" id="box2">  hello</div>
+<div class="box" id="box3">  hello</div>
+
+<script>
+    //获取屏幕高宽
+    // let 栈=document.documentElement;
+    // winW=栈.clientWidth;
+    // winH=栈.clientHeight;
+    // boxW=box.offsetWidth;
+    // boxWH=box.offsetHeight;
+    // box.style.position="absolute";
+    // box.style.left=(winW-boxW)/2+'px';
+    // box.style.top=(winH-boxH)/2+'px';
+
+
+</script>
+</body>
+</html>

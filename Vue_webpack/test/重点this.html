@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This相关知识点</title>
+
+    <script type="text/javascript">
+            function Person(color) {
+                console.log("1:this-->" + this);
+                this.color = color;
+
+                this.getColor = function () {
+                    console.log("getColor:this-->" + this);
+                    return this.color;
+                };
+                this.setColor = function (color) {
+                    console.log("setColor:this-->" + this);
+                    this.color = color;
+                }
+            }
+            new Person("red");
+            //这条语句的this打印结果是：[object Object]
+            //这里的this是window
+            var p=new Person("yellow")
+            //这条语句的this打印结果是：[object Object]
+            //this是:实例对象p
+            p.getColor();
+            //这条语句的this打印结果是：getColor:this-->[object Object]
+            //this是:实例对象p
+            var obj={};
+            p.setColor.call(obj,"black");
+            //这条语句的this打印结果是：setColor:this-->[object Object]
+            //this是:实例对象obj
+            var test=p.setColor;
+            test()  // this 是window [object Window]
+
+        function fun1() {
+            function fun2() {
+                console.log(this);
+            }
+            fun2();  //this是：Window 
+        }
+        fun1();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

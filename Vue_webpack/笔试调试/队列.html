@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+var arr=['1','2'];
+
+        while(T!=0){
+            var T=1;
+            var Q=5;
+            var lines=[[ 'PUSH','1'],['PUSH','2'],['POP','']];
+            var res=[];
+                for(var i=0;i<Q;i++) {
+                    var deal=lines[i][0];
+                    console.log(deal);
+                    //插入
+                    if(deal==='PUSH'){
+                        res.push(lines[i][1]);
+                    }
+                    else if( deal==='CLEAR'){
+                        //删除所有
+                        res.splice(0,res.length-1);
+                    }
+                    else if( deal==='SIZE'){
+                        //输出长度
+                        console.log(res.length);
+                    }
+                    //删除队首
+                    else if(deal==='POP'&& res.length>0){
+                        print(res[0]);
+                        res.shift();
+                    }
+                    else if(deal==='POP'&& res.length==0){
+                        console.log('-1');
+                    }
+                    //取队首
+                    else if(deal =='TOP' && res.length>0){
+                        console.log(res[0]);
+                    }
+                    else if(deal =='TOP' && res.length==0){
+                        console.log('-1');
+                    }
+
+
+            }
+            T--
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

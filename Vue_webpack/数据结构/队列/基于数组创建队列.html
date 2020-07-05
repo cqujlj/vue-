@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    class Queue{
+        constructor(){
+            this.items=[];
+        }
+        //插入
+        enqueue(element){
+            this.items.push(element);//尾部插入
+        }
+        //删除
+        dequeue(){
+            return this.items.shift();//头部删除
+        }
+        // 返回队首元素
+        front(){
+            return this.items[0];
+        }
+    //    判空
+        isEmpty(){
+            return this.items.length===0;
+        }
+    //    返回元素个数
+        size(){
+            return this.items.length;
+        }
+    }
+
+    class QueueElement{
+        constructor(element,priority){
+            this.element=element;
+            this.priority=priority;
+        }
+    }
+    //优先级队列
+    class PriorityQueue extends Queue{
+        enqueue(element,priority) {
+            const queueElement=new QueueElement(element,priority);
+        //考虑如何插入元素
+            if (this.isEmpty()){
+                //队列为空，不用比较优先级，直接插入元素
+                this.items.push(queueElement);
+            }else{
+                let flag=false;//记录是否执行过插入
+            //    队列不为空，则比较优先级，在正确的位置插入
+                for (let i=0;i<this.items.length;i++){
+                    if (this.items[i].priority > queueElement.priority){
+                    //    找到正确位置，执行插入
+                        this.items.splice(i,0,queueElement);
+                        flag=true;
+                        break;
+                    }
+                }
+                //如果查到到末尾都没有优先级更低的，
+                // 则本元素优先级最低，插到末尾
+                if (!flag){
+                    this.items.push(queueElement);
+                }
+            }
+        }
+    }
+
+
+
+    // const  queue=new Queue();
+    // queue.enqueue("A");
+    // queue.enqueue("B");
+    // queue.enqueue("C");
+    // queue.enqueue("D");
+    // console.log(queue.items);
+    // console.log(queue.dequeue());
+    // console.log(queue.items);
+    // console.log(queue.dequeue());
+    // console.log(queue.size());
+    // console.log(queue.isEmpty());
+    //测试优先级队列
+    const queue=new PriorityQueue();
+    queue.enqueue('AA',100);
+    queue.enqueue('B',80);
+    queue.enqueue('CC',200);
+    queue.enqueue('DD',300);
+    queue.items.forEach(item=>{
+        console.log(item.element,item.priority)
+    })
+
+
+
+    //    击鼓传花：谁数到num谁淘汰
+   //  function game(nameList,num) {
+   //     const  queue=new Queue();
+   //  //   对namelist进行不断地进入队列和出去
+   //  //    先把所有name加入队列
+   //      for(let i=0;i<num-1;i++){
+   //          queue.enqueue(nameList[i]);
+   //      }
+   //
+   //      while (queue.size() > 1){
+   //          for(let i=0;i<num-1;i++){
+   //              //没读到num 则将队首元素移除队列
+   //              // 然后加到队尾
+   //              queue.enqueue(queue.dequeue());
+   //          }
+   //          //读到num  出队列
+   //          let temp = queue.dequeue();
+   //          console.log("淘汰:",temp);
+   //      }
+   //     return queue.front();  //最后剩下的那个
+   //  }
+   //
+   //
+   // var res= game(['A','B,','C','D','E'],5);
+   //  console.log("最后剩下：",res)
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒子</title>
+    <style>
+        .father{
+            background-color: #666666;
+            height: 500px;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .son{
+            background-color: #cd9e9d;
+            /*width: 500px;*/
+            height: 100px;
+            margin: 10px;
+            flex: 1;
+        /*    填充整个父类*/
+
+        }
+    </style>
+    <script>
+        console.log(typeof NaN)   //number
+        console.log(NaN == NaN)  //false
+
+        for(var i=0;i<5;i++){
+            (function(i){
+                setTimeout(function(){
+                    console.log(i)
+                },1000*i)
+            })(i)
+        }
+
+//url解析
+        function parseUrl(url) {
+            var pattern = RegExp("^(?:([^/?#]+))?//(?:([^:]*)(?::?(.*))@)?(?:([^/?#:]*):?([0-9]+)?)?([^?#]*)(\\?(?:[^#]*))?(#(?:.*))?");
+            var matches =  url.match(pattern) || [];
+            return {
+                protocol: matches[1],
+                username: matches[2],
+                password: matches[3],
+                hostname: matches[4],
+                port:     matches[5],
+                pathname: matches[6],
+                search:   matches[7],
+                hash:     matches[8]
+            };
+        }
+        parseUrl("https://juanni:miao@www.foo.com:8080/file;foo=1;bar=2?test=3&miao=4#test")
+
+        //防抖函数:指触发事件后在 n 秒内函数只能执行一次，
+        // 如果在 n 秒内又触发了事件，则会重新计算函数执行时间
+        // 函数在特定的时间内不被再调用后执行
+        function  debounce(func,n){
+            let timer=null;
+            return function (...args) {
+                if (timer)
+                    clearTimeout(timer);  //只能执行一次
+                timer = setTimeout(() => {
+                    func.apply(this, args)
+                }, n)
+            }
+          }
+
+
+        // 所谓节流:就是指连续触发事件但是在 n 秒中只执行一次函数。
+        // 节流会稀释函数的执行频率
+        // 确保函数特定的时间内至多执行一次
+
+        // 函数节流
+        var canRun = true;
+        document.getElementById("id").onscroll = function(){
+            if(!canRun)  return;
+            canRun = false;
+            setTimeout( function () {
+                console.log("函数节流");
+                canRun = true //  1s后可执行一次
+            }, 1000)
+        }
+
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+</div>
+</body>
+</html>

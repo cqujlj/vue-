@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行上下文</title>
+    <script type="text/javascript">
+/*代码：1、全局代码 2、函数代码（局部）
+* 上下文：1、全局执行上下文window 2、函数执行上下文
+* */
+//在执行全局代码前将window确定为全局执行上下文
+/*对全局数据进行预处理：
+ *var定义的全局变量为undefined。添加为window的属性
+ *function声明的全局函数==>赋值(fun),添加为window的方法
+ * this==>赋值（window）
+ *开始执行全局代码
+ * */
+    console.log(this); //Window
+    //查找变量a1和函数a2()去window中找
+    console.log(a1);  //==window.a1 --> undefined  代码提升
+    window.a2();// ==a2() -->我是a2()  函数提升
+    console.log(a2);  // ƒ a2() {}
+    var a1=3;
+    function a2() {
+        console.log("我是a2()");
+    }
+    var a3=4;
+
+/* //函数执行上下文：
+*在调用函数，准备执行函数体之前，创建对应的执行上下文
+*对局部数据进行预处理：
+* 1、形参变量==>赋值(实参列表)==>添加为执行上下文的属性
+* 2、arguments==>赋值(实参列表)，添加为执行上下文的属性
+* 3、var 定义的局部变量==>undefined，添加为执行上下文的属性
+* 4、function声明的函数==>赋值(fun),添加为执行上下文的方法
+* 5、this==>赋值（调用函数的对象）
+*开始执行函数体代码
+* */
+        function fn(a1) {
+            console.log(a1);  //-->2
+            console.log(a2); //-->undefined
+            a3();  //-->我是a3()
+            console.log("fn this:",this); //window
+            var a2=3;
+            function a3() {
+                console.log("我是a3()");
+                console.log("a3 this:",this); //window
+            }
+            console.log(arguments); //arguments:类对象数组，封装所有传入的参数
+            //-->Arguments(2) [2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        }
+        fn(2,3);  //调用函数的对象是window
+        // a3();  //全局不能访问函数内部的属性和方法
+/*执行上下文栈
+* 1、在全局代码执行之前，JS引擎会创建一个栈来存储管理所有的执行上下文对象
+* 2、在全局执行上下文(window)去确定后，将其添加到栈中(压栈)
+* 3、在函数执行上下文执行创建后，将其添加到栈中(压栈)
+* 4、在当前函数执行完后，将栈顶的对象移除(出栈)
+* 5、当所有代码执行完毕后，栈中只剩下window
+*  */
+console.log("-----上下文栈-----");
+
+        var aa=10; //1、进行全局执行上下文
+        var bar=function (x) {
+            var bb=5;
+            foo(x+bb);  //foo(10+5) //3、进行foo函数执行上下文
+        };
+        var foo=function (y) {
+            var cc=5;
+            console.log(aa+cc+y);  //10+5+15
+        };
+        bar(10);  //-->30  //2、进行bar函数执行上下文
+        /* 入栈顺序：window bar foo
+        * 出栈顺序：foo bar  window */
+
+
+        //面试题
+        console.log("global begin:"+i);  //global begin undefined
+        var i=1;
+        foo1(1);
+        /*foo() begin:1  foo() begin:2  foo() begin:3
+        * foo() end:3    foo() end:2     foo() end:1
+        */
+        function foo1(i) {
+            if (i==4){
+                return;
+            }
+            console.log("foo() begin:"+i);
+            foo1(i+1);  //递归调用，直到i==4结束调用
+            console.log("foo() end:"+i);
+        }
+        console.log("global end:"+i);  //global end:1
+
+//先执行变量提升，在执行函数提升
+        function aaa() {
+        }
+        var aaa;
+        console.log(typeof aaa);  //function
+//如果bbb赋值了  则不是function类型
+        function bbb() {
+        }
+        var bbb=99;
+        console.log(typeof bbb);  //Number
+
+//测试2 先执行变量提升，在执行函数提升,所以undefined
+        if(!(bbbb in window)){
+            var bbbb=1;
+        }
+        console.log(bbbb); //undefined
+//测试3
+        var ccc;
+        function ccc(ccc) {
+            console.log(ccc);
+        }
+        ccc(3);//ccc is not a function
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

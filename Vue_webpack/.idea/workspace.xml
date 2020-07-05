@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c1b4e7b-ac9e-4ed9-9d38-6f4e5df82ef0" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Less File" />
+        <option value="XSLT Stylesheet" />
+        <option value="Vue Single File Component" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/myproject/music" />
+  </component>
+  <component name="ProjectId" id="1Y6H2HiwhJEiLrNDwAfEiFrKVhw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jlj" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="D:\WebStorm-2019.2.4\WebStorm 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/myproject/网易云API.html" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/myproject/music" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Vue_webpack\myproject\music\src\assets" />
+      <recent name="E:\Vue_webpack\myproject\mall\src" />
+      <recent name="E:\Vue_webpack\数据结构" />
+      <recent name="E:\Vue_webpack\myproject\mall\src\views\register" />
+      <recent name="E:\Vue_webpack\myproject\mall\src\views\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Vue_webpack\myproject\music\src" />
+      <recent name="E:\Vue_webpack\数据结构\树结构" />
+      <recent name="E:\Vue_webpack\笔试调试" />
+      <recent name="E:\Vue_webpack\myproject\mall\src\views\login" />
+      <recent name="E:\Vue_webpack\myproject\mall\src\views\register" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.async.js">
+    <configuration name="队列.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vue_webpack/笔试调试/队列.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="generator.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vue_webpack/08learnVue/generator函数/generator.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="BSTree.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/数据结构/树结构/BSTree.js" working-dir="$PROJECT_DIR$/数据结构/树结构">
+      <method v="2" />
+    </configuration>
+    <configuration name="async.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/08learnVue/generator函数/async.js" working-dir="$PROJECT_DIR$/08learnVue/generator函数">
+      <method v="2" />
+    </configuration>
+    <configuration name="eventLoop.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/08learnVue/generator函数/eventLoop.js" working-dir="$PROJECT_DIR$/08learnVue/generator函数">
+      <method v="2" />
+    </configuration>
+    <configuration name="generator.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/08learnVue/generator函数/generator.js" working-dir="$PROJECT_DIR$/08learnVue/generator函数">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.async.js" />
+        <item itemvalue="Node.js.eventLoop.js" />
+        <item itemvalue="Node.js.generator.js" />
+        <item itemvalue="JavaScript Debug.generator.html" />
+        <item itemvalue="Node.js.BSTree.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c1b4e7b-ac9e-4ed9-9d38-6f4e5df82ef0" name="Default Changelist" comment="" />
+      <created>1582255914115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582255914115</updated>
+      <workItem from="1582255915246" duration="6578000" />
+      <workItem from="1582277649871" duration="31000" />
+      <workItem from="1582286327362" duration="6818000" />
+      <workItem from="1582335481306" duration="12123000" />
+      <workItem from="1582427602026" duration="13985000" />
+      <workItem from="1582506844278" duration="2776000" />
+      <workItem from="1582546251968" duration="627000" />
+      <workItem from="1583416953880" duration="655000" />
+      <workItem from="1583458006034" duration="8320000" />
+      <workItem from="1584190372413" duration="1858000" />
+      <workItem from="1584192270590" duration="1800000" />
+      <workItem from="1584194093129" duration="1793000" />
+      <workItem from="1584195918003" duration="965000" />
+      <workItem from="1584197218426" duration="603000" />
+      <workItem from="1584235207077" duration="5278000" />
+      <workItem from="1584343702583" duration="12001000" />
+      <workItem from="1584409520791" duration="13942000" />
+      <workItem from="1584493193859" duration="12769000" />
+      <workItem from="1584513066257" duration="8286000" />
+      <workItem from="1584581109627" duration="17653000" />
+      <workItem from="1584666977397" duration="7613000" />
+      <workItem from="1584757076085" duration="5669000" />
+      <workItem from="1584858045982" duration="2565000" />
+      <workItem from="1584925765402" duration="19960000" />
+      <workItem from="1584975814194" duration="302000" />
+      <workItem from="1584976168207" duration="19000" />
+      <workItem from="1585011622730" duration="14387000" />
+      <workItem from="1585044096060" duration="96000" />
+      <workItem from="1585044413527" duration="34000" />
+      <workItem from="1585097864403" duration="2341000" />
+      <workItem from="1585100314824" duration="21048000" />
+      <workItem from="1585128007915" duration="1841000" />
+      <workItem from="1585136216447" duration="5004000" />
+      <workItem from="1585184076560" duration="22216000" />
+      <workItem from="1585274549387" duration="2478000" />
+      <workItem from="1585301399441" duration="13000" />
+      <workItem from="1585301752725" duration="6861000" />
+      <workItem from="1585320887746" duration="618000" />
+      <workItem from="1585368513721" duration="973000" />
+      <workItem from="1585385303344" duration="33000" />
+      <workItem from="1585385666379" duration="616000" />
+      <workItem from="1585445544139" duration="10463000" />
+      <workItem from="1585528628462" duration="13973000" />
+      <workItem from="1585616478328" duration="13528000" />
+      <workItem from="1585811803674" duration="3179000" />
+      <workItem from="1585912847584" duration="8089000" />
+      <workItem from="1585923799444" duration="1621000" />
+      <workItem from="1585987952014" duration="1017000" />
+      <workItem from="1586157939987" duration="8416000" />
+      <workItem from="1586315750734" duration="13462000" />
+      <workItem from="1586488917472" duration="3878000" />
+      <workItem from="1586592786576" duration="2626000" />
+      <workItem from="1586741396076" duration="9191000" />
+      <workItem from="1586827203278" duration="1637000" />
+      <workItem from="1586914040587" duration="18428000" />
+      <workItem from="1587003757098" duration="1828000" />
+      <workItem from="1587086451448" duration="11970000" />
+      <workItem from="1587172036921" duration="17700000" />
+      <workItem from="1587258389706" duration="19763000" />
+      <workItem from="1587303059355" duration="3029000" />
+      <workItem from="1587347290217" duration="29845000" />
+      <workItem from="1587430547745" duration="23123000" />
+      <workItem from="1587517519434" duration="36269000" />
+      <workItem from="1587604244897" duration="11460000" />
+      <workItem from="1587625720019" duration="10169000" />
+      <workItem from="1587648243402" duration="5204000" />
+      <workItem from="1587690919323" duration="4345000" />
+      <workItem from="1587696313919" duration="430000" />
+      <workItem from="1587696791461" duration="104000" />
+      <workItem from="1587696932738" duration="4534000" />
+      <workItem from="1587710527646" duration="9876000" />
+      <workItem from="1587732836609" duration="3386000" />
+      <workItem from="1587736622523" duration="73000" />
+      <workItem from="1587736708664" duration="2900000" />
+      <workItem from="1587739652310" duration="270000" />
+      <workItem from="1587777992719" duration="14056000" />
+      <workItem from="1587803031126" duration="1326000" />
+      <workItem from="1587813461087" duration="3745000" />
+      <workItem from="1587870775290" duration="19451000" />
+      <workItem from="1587954590448" duration="7438000" />
+      <workItem from="1588037516877" duration="9408000" />
+      <workItem from="1588125565698" duration="7812000" />
+      <workItem from="1588143878512" duration="13194000" />
+      <workItem from="1588208906060" duration="9626000" />
+      <workItem from="1588227623519" duration="11464000" />
+      <workItem from="1588299737169" duration="595000" />
+      <workItem from="1588322483270" duration="6958000" />
+      <workItem from="1588380178091" duration="7885000" />
+      <workItem from="1588399133791" duration="11282000" />
+      <workItem from="1588427591849" duration="1418000" />
+      <workItem from="1588469485016" duration="1769000" />
+      <workItem from="1588472717818" duration="29000" />
+      <workItem from="1588472754719" duration="390000" />
+      <workItem from="1588555608964" duration="2758000" />
+      <workItem from="1588560075756" duration="653000" />
+      <workItem from="1588563975047" duration="380000" />
+      <workItem from="1588564738916" duration="168000" />
+      <workItem from="1588575149502" duration="542000" />
+      <workItem from="1588575957125" duration="1111000" />
+      <workItem from="1588577250984" duration="780000" />
+      <workItem from="1588578128589" duration="152000" />
+      <workItem from="1588578533981" duration="2290000" />
+      <workItem from="1588586885897" duration="2084000" />
+      <workItem from="1588597508633" duration="3442000" />
+      <workItem from="1588602456718" duration="12000" />
+      <workItem from="1588641702055" duration="27000" />
+      <workItem from="1588735955199" duration="1194000" />
+      <workItem from="1589339156737" duration="202000" />
+      <workItem from="1589508456472" duration="5000" />
+      <workItem from="1589678851060" duration="60000" />
+      <workItem from="1590974952979" duration="3019000" />
+      <workItem from="1590991480368" duration="646000" />
+      <workItem from="1591067287744" duration="9247000" />
+      <workItem from="1591146029412" duration="217000" />
+      <workItem from="1591147857672" duration="4647000" />
+      <workItem from="1591174560035" duration="782000" />
+      <workItem from="1591238101832" duration="3244000" />
+      <workItem from="1591318345932" duration="48000" />
+      <workItem from="1591607569127" duration="11000" />
+      <workItem from="1591693303158" duration="1482000" />
+      <workItem from="1591751217787" duration="49000" />
+      <workItem from="1591770062822" duration="2393000" />
+      <workItem from="1591786787192" duration="4009000" />
+      <workItem from="1591837233620" duration="87000" />
+      <workItem from="1591844509365" duration="2267000" />
+      <workItem from="1592221243742" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

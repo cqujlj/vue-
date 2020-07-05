@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise的基本使用</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+// setTimeout( ()=>{
+//         console.log( 'hello world');
+//     },1000)
+//参数=>函数(resolve,reject)
+// 当有异步操作时，使用promise对异步操作进行封装
+//new ->构造函数（保存相关状态->执行传入的函数）
+//在执行传入函数的回调函数时，会传入两个参数：resolve和reject 他们本身也是函数
+//
+new Promise((resolve,reject)=>{
+    //第一次网络请求
+    setTimeout( ()=>{
+        resolve()
+    },1000)
+}).then( ()=>{
+    //第一次数据data1处理代码
+    console.log( 'hello data1');
+    return new Promise((resolve,reject)=>{
+        //第二次网络请求
+        setTimeout( ()=>{
+            resolve()
+        },1000)
+    }).then( ()=>{
+        //第二次数据data2处理代码
+        console.log( 'hello data2');
+        return new  Promise((resolve,reject)=>{
+           // 第二次网络请求
+            setTimeout( ()=>{
+                resolve()
+            },1000)
+        }).then( ()=>{
+            //第三次数据data3处理代码
+            console.log( 'hello data3');
+            return new Promise((resolve,reject)=>{
+                // 第四次网络请求
+                setTimeout(()=>{
+                    //第1次数据data4处理代码
+                    console.log( 'data4');
+                },1000)
+            })
+        })
+    })
+})
+
+
+    new Promise((resolve,reject)=>{
+
+         setTimeout(()=>{
+             //数据请求成功时 跳转到then 执行数据处理
+             resolve(data);
+             //数据请求失败时 跳转到catch 捕获异常
+             reject();
+         },1000)
+    }).then((data)=>{
+        //数据处理代码
+        console.log(data);
+    }).catch((err)=>{
+        //输出错误
+        console.log(err);
+    })
+</script>
+</body>
+</html>

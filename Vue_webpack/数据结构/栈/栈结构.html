@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function testA() {
+            console.log("A1");
+            testB();
+            console.log("A2");
+        }
+        function testB() {
+            console.log("B1");
+            testC();
+            console.log("B2");
+        }
+        function testC() {
+            console.log("C");
+        }
+        testA();  //A1 B1 C B2 A2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

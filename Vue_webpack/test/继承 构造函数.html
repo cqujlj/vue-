@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>借用构造函数</title>
+    <script type="text/javascript">
+        /*继承方式2：借用构造函数继承（假的）
+        * 一、套路
+        * 1、定义父类型构造函数
+        * 2、定义子类型构造函数
+        * 3、在子类型构造函数中调用父 类型构造函数
+        * 二、关键
+        * 1、在子类型构造函数中调用Super()调用父类构造函数*/
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    function Student(name,age,sex) {
+        //Student借用Person的构造函数
+        Person.call(this,name,age); //相当于this.Person(name,age)
+        /*this.name=name;
+        this.age=age;*/
+        this.sex=sex;
+    }
+    var s=new Student("Tom",20,"女")
+        console.log(s.name,s.age,s.sex); //Tom 20 女
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

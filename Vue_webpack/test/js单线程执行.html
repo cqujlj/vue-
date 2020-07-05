@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS单线程执行</title>
+    <script type="text/javascript">
+        /*如何证明js执行是单线程？
+        * ***setTimeout()的回调函数是在主线程执行
+        * ***定时器回调函数只有在运行栈中的代码执行完后才可能执行(所以出现了时差)
+        * 
+        * 2、为什么js要用单线程模式？
+        * ***JavaScript的单线程与其用途有关
+        * ***作为浏览器脚本语言，JavaScript的主要用途是与用户互动、DOM操作
+        * ***这决定了它只能是单线程，否则会带来很复杂的同步问题
+        * 
+        * 3、代码的分类
+        * ***初始化代码
+        * ***回调代码
+        * 
+        * 4、JS引擎执行代码的基本流程
+        * ***先执行初始化代码：包含一些特别代码(异步执行代码)
+        *   *设置定时器
+        *   *绑定监听
+        *   *发送ajax请求
+        * ***后面某个试可才会执行回调函数*/
+        
+        setTimeout(function () {
+            console.log(" 22222")
+        },2000);  //异步执行代码
+        setTimeout(function () {
+            console.log(" 11111")
+        },1000);
+        setTimeout(function () {
+            console.log(" 000000")
+        },0);
+        //***以下是初始化代码
+        function fn() {
+            console.log("fn()")
+        }
+        fn(); //立即执行
+        alert("-----");  //暂停主线程的执行，也暂停计时，点击确定后，恢复程序执行
+        console.log("alert之后");
+        //输出结果： fn()-> alert之后->000000->11111->22222
+        //回调代码要在初始化代码执行后才可能执行
+    </script>
+</head>
+<body>
+
+</body>
+</html>

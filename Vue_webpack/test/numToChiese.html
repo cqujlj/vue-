@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组用中文表示</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    let str="10001";
+    // let str = readLine();
+    let num = Number(str); //强制转换数据类型  如果str有字母  则num=NaN
+    // console.log(num);
+    if (str !== num.toString() || num >= 100000 || num <= 0) {
+        console.log('错误输入');
+    }
+    else {
+        const arr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+        const w = ['', '十', '百', '千', '万'];
+        let res = '';
+        let flag = false;// 判断中间是否存在0
+
+        //forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。
+                                        //3002
+        str.split('').map(Number).reverse().forEach((data, index) => {
+            console.log("index:"+index);
+            console.log("data:"+data);
+            //判断 如果是个位 并且个位！=0 那么res=arr[data]:比如个位=8 那么res=arr[8]=八
+            if (index == 0) {
+                if (data != '0') {
+                    res = arr[data];
+                }
+            }
+            //如果不是个位 就判断该位==0？
+            else {
+                if (data != 0) {
+                    //该位！=0  res=arr[data]+w[index]+"前一位为0则加上零"
+                    res = `${arr[data]}${w[index]}${flag ? '零' : ''}${res}`;
+                    flag = false;
+                } else {
+                    flag = true;
+                }
+            }
+        });
+        // 没处理最后几位是不是0的情况,最后是0就删除
+        res = res[res.length - 1] == '零' ? res.slice(0, res.length - 1) : res;
+        console.log(res);
+    }
+
+
+</script>
+
+</body>
+</html>

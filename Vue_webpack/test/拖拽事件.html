@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #box1{
+            background-color: #cd9e9d;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: #7296cd;
+            position: absolute;
+            left: 200px;
+            right: 200px;
+        }
+        #imgBox{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 400px;
+            right: 400px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            //滚轮往下 box变大   滚轮往上 box变小
+            //onmousewheel 鼠标滚动的事件，会在滚轮滚动时触发
+            var box1 = document.getElementById("box1");
+            box1.onmousewheel = function (event) {
+                // alert("我滚了");
+                //判断往上还是往下滚
+                // sheelDelta  +120:向上  -120：向下 火狐chrom不支持
+                // alert(event.sheelDelta);
+                // detail  +3:向上  -3：向下
+                // alert(event.detail);
+
+                if (event.detail>0 || event.sheelDelta>0){
+                    //向上滚
+                    box1.style.height-=10+"px";
+                }
+                else {
+                    //向下滚
+                    box1.style.height+=10+"px";
+                }
+            };
+
+            //火狐不支持onmousewheel  要使用DOMMouseScroll来绑定滚动事件
+            //注意该事件要通过addEventListener()函数来绑定
+            // bind(box1,"DOMMouseScroll",function () {
+            //     alert("我滚了");
+            // });
+            //
+            // function bind(obj, eventStr, callback) {
+            //     if (obj.addEventListener()) {
+            //         obj.addEventListener(eventStr, callback, false);
+            //     }
+            //     else {
+            //         obj.attachEvent("on"+eventStr,function () {
+            //             callback.call(obj);
+            //         });
+            //     }
+            // }
+        }
+
+
+
+    // //-------------拖拽功能--------------------
+    //         var box1=document.getElementById("box1");
+    //         var box2=document.getElementById("box2");
+    //        var imgBox=document.getElementById("imgBox")
+    //         drag(box1);
+    //         drag(box2);
+    //         drag(imgBox);
+    //     };
+    //         //拖拽函数
+    //         function drag(obj) {
+    //             // 鼠标按下onmousedown 开始拖拽元素
+    //             //    鼠标移动onmousemove 跟着移动
+    //             //    鼠标放开onmouseup 被拖拽元素固定在当前位置
+    //             // 鼠标按下onmousedown 开始拖拽
+    //             obj.onmousedown=function (event) {
+    //                 //        求div偏移量  clientX-元素.offsetLeft clientY-元素.offsetTop
+    //                 //         event=event || window.event;
+    //                 var ol=event.clientX-obj.offsetLeft;
+    //                 var ot=event.clientY-obj.offsetTop;
+    //                 // 鼠标移动onmousemove 被拖拽元素跟着移动
+    //                 document.onmousemove=function (event) {
+    //                     // event= event || window.event;
+    //                     var left =event.clientX-ol;
+    //                     var top =event.clientY-ot;
+    //                     // console.log(left+","+top);
+    //                     //修改box1的位置
+    //                     obj.style.left=left+"px";
+    //                     obj.style.top=top+"px";
+    //                 };
+    //                 //鼠标放开onmouseup 被拖拽元素固定在当前位置
+    //                 document.onmouseup=function () {
+    //                     // 取消鼠标移动事件
+    //                     document.onmousemove=null;
+    //                     document.onmouseup=null;
+    //                 }
+    //             }
+    //         }
+
+    </script>
+</head>
+<body>
+<p>hello</p>
+<div id="box1"> </div>
+<div id="box2"> </div>
+<img  id="imgBox" src="image/1.jpg" >
+</body>
+</html>

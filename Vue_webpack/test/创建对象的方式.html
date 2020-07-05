@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+    <script type="text/javascript">
+
+     /*方式一： Object构造函数模式
+     * 套路：先创建空Object对象，再动态添加属性和方法
+     * 适用场景：起始时不确定对象内部数据
+     * 缺点:语句太多*/
+      var obj1=new Object();
+      obj1.name="jlj";
+      obj1.age=18;
+      obj1.getName=function () {
+          return this.name;
+      };
+     obj1.setName=function (newName) {
+          this.name=newName;
+     };
+
+     /*方式二：对象字面量方式
+     *套路：使用{}创建对象，同时指定属性和方法
+     *  适用场景：内部属性和方法已经确定
+     * 问题：如果要创建多个对象，则有重复代码*/
+     var obj2={
+         name:"jlj",
+         age:18,
+         getName:function () {
+             return this.name;
+         },
+         setName:function (newName) {
+             this.name=newName;
+         }
+     };
+     /*方式3：工厂模式
+     * 套路：通过工厂函数动态创建对象并返回
+     * 适用场景：需要创建多个对象
+     * 问题：对象没有具体的类型，就是object类型*/
+
+    function createStudent(name,age) {
+         var obj={
+             name:name,
+             age:age,
+             setName:function (newName) {
+                 this.name=newName;
+             },
+         };
+         return obj;
+     };
+     function createTeacher(name,age) {
+         var obj={
+             name:name,
+             age:age,
+             getName:function () {
+                 return  this.name;
+             },
+         };
+         return obj;
+     }
+     //创建多个teacher
+     var t1=createTeacher("sxb",38);
+    // 创建多个student
+    var s1=createStudent("jlj",17);
+     console.log("t1:",typeof t1); //Object
+     console.log("s1:",typeof s1); //Object
+//存在的问题：无法区分谁是student谁是teacher
+
+     /*方式4：自定义构造函数
+  * 套路：自定义构造函数，使用new创建对象
+  * 适用场景：需要创建多个类型确定的对象
+  * 问题：每个对象都有相同的数据(方法)，浪费内存*/
+     function Person(name,age) {
+         this.name=name;
+         this.age=age;
+         this.setName=function (newName) {
+             this.name=newName;
+         }
+     }
+     function Student(name,age) {
+         this.name=name;
+         this.age=age;
+         this.setName=function (newName) {
+             this.name=newName;
+         }
+     }
+     var stu=new Student("jlj",17);
+     var tea=new Person("lwj",18)
+     console.log("stu:",stu  instanceof Student);//true
+     console.log("tea:",tea instanceof Person );//true
+     /*方式5：构造函数+原型对象
+ * 套路：自定义构造函数，属性在构造函数中初始化，方法添加到原型上
+ * 适用场景：需要创建多个类型确定的对象
+ * 问题：*/
+
+     function Dog(name,age) {
+         //属性在构造函数中初始化
+         this.name=name;
+         this.age=age
+     }
+    //方法添加到原型上
+     Dog.prototype.setName=function () {
+         this.name=name;
+     };
+     var dog1=new Dog("小白",2);
+     console.log(dog1 instanceof Dog) //true
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+       /*#box{*/
+       /*    background-color: coral;*/
+       /*    height: 400px;*/
+       /*    width: auto;*/
+       /*    text-align: center;*/
+       /*    !*父元素相对定位*!*/
+       /*    position: relative;*/
+       /*}*/
+       /* #box p{*/
+       /*     background-color: #448ccd;*/
+       /*     font-size: 24px;*/
+       /*     width: 200px;*/
+       /*     height: 100px;*/
+       /*     !*子元素绝对定位*!*/
+       /*     position: absolute;*/
+       /*     !*方法1 定位*!*/
+       /*     left: calc(50% - 100px);*/
+       /*     top: calc(50% - 50px);*/
+       /*     !*方法2  auto*!*/
+       /*     !*top: 0px;*!*/
+       /*     !*right: 0px;*!*/
+       /*     !*left: 0px;*!*/
+       /*     !*bottom: 0px;*!*/
+       /*     !*margin: auto;*!*/
+       /* }*/
+
+        /*#box{*/
+        /*    background-color: coral;*/
+        /*    height: 400px;*/
+        /*    width: auto;*/
+        /*    text-align: center;*/
+        /*    !*方法3  弹性盒子模型*!*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*}*/
+        /*#box p{*/
+        /*    background-color: #448ccd;*/
+        /*    font-size: 24px;*/
+        /*    width: 200px;*/
+        /*    height: 100px;*/
+        /*}*/
+
+        #box{
+            background-color: coral;
+            height: 400px;
+            width: 100%;
+            /*方法4 table*/
+            display: table;
+
+        }
+        #box p{
+            background-color: #448ccd;
+            font-size: 24px;
+            width: 200px;
+            height: 100px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var a=0;
+        var b=0;
+        function A(a) {
+            A=function (b) {
+                console.log(a+b++); //4
+            };
+            console.log(a++);  //1
+        }
+        A(1);
+        A(2);
+
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <p>水平垂直居中</p>
+</div>
+
+</body>
+</html>

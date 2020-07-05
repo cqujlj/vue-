@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: #7296cd;
+        }
+        .b2{
+            width: 100px;
+            height: 300px;
+            background-color: #ffa8b2;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var btnAdd=document.getElementById("btnAdd");
+            var btnDel=document.getElementById("btnDel");
+            var btnTog=document.getElementById("btnTog");
+
+            //读取box
+            var box=document.getElementById("box");
+
+            btnAdd.onclick=function(){
+                addClass(box,"b2");
+            };
+            btnDel.onclick=function(){
+                remove(box, "b2");
+            };
+            btnTog.onclick=function(){
+                Toggle(box,"b2");
+            };
+
+            //为box添加class
+            function addClass(obj,cn) {
+                //不存在则添加
+                if (!hasClass(obj,cn)){
+                    obj.className+=" "+cn;
+                }
+                else {
+                    alert("该类名已存在")
+                }
+            }
+
+            function remove(obj,cn) {
+                //存在则删除
+                if (hasClass(obj,cn)){
+                    obj.className=obj.className.replace(cn,"")
+                }else {
+                    alert("不存在该类名");
+                }
+            }
+
+            function Toggle(obj,cn) {
+                //存在则删除
+                if (hasClass(obj,cn)){
+                    remove(obj,cn);
+                }
+                //不存在则添加
+                else {
+                    addClass(obj,cn);
+                }
+            }
+
+            //判断是否存在class
+            function hasClass(obj,cn) {
+                //使用正则表达式  \b:代表单词的开头或结尾，也就是单词的分界处
+                var reg=new RegExp("\\b"+cn+"\\b");
+                return reg.test(obj.className);
+                //存在返回ture  不存在返回false
+            }
+
+        }
+    </script>
+</head>
+<body>
+<button id="btnAdd">点击添加class</button>
+<button id="btnDel">点击删除class</button>
+<button id="btnTog">点击切换class</button>
+<div id="box" class="b1"></div>
+</body>
+</html>

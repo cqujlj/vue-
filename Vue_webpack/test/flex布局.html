@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+    <style>
+        .box{
+            /*height: 600px;*/
+            width: 500px;
+            background-color: #9b9b9b;
+            /*flex:box以block形式存在 inline-flex：box以inline形式存在 */
+            display: flex;  /*块级元素形式*/
+            /*display: inline-flex;*/
+            /*flex-direction: column;*/
+            /*flex-direction的取值：
+            row：默认----->沿着main-axis从头到尾（左-->右）
+            row-reverse：<-------反转main-axis（右-->左）
+            column:沿着cross-axis从头到尾（上-->下）
+            column-reverse：翻转cross-axis（下-->上）
+            ;*/
+            /*flex-wrap: wrap;*/
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        .item1,.item2,.item3{
+            height: 120px;
+            width: 150px;
+            text-align: center;
+            color: white;
+            border: 1px solid black;
+        }
+        .item1{
+            background-color: #ffa8b2;
+        }
+        .item2{
+            background-color: #ff5b27;
+
+        }
+        .item3{
+            background-color: #3bff30;
+            /*align-self: flex-end;*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="item1">item</div>
+    <div class="item2">item2 </div>
+    <div class="item3">item</div>
+    <div class="item2">item2 </div>
+    <div class="item3">item</div>
+</div>
+</body>
+</html>

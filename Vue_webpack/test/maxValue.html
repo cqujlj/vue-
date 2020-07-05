@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //输入数字
+    let nums=[2 ,3, 4, 1, 5, 7, 6];
+    // let nums=read_line().split(' ').map(Number);
+    // let num=nums.split('').map(Number);
+    let arr=[];
+    console.log("num:"+nums);
+    for(let i=1;i<nums.length;i++){
+        if(nums[i]>nums[i-1]&&nums[i]>nums[i+1]){
+            arr.push(nums[i]);
+        }
+    }
+    if(arr.length>0){
+        console.log('arr:'+arr.join(','));
+    }
+    else {
+        console.log('--')
+    }
+
+</script>
+</body>
+</html>

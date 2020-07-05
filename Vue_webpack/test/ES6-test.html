@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script type="text/javascript">
+        /*let s=0;
+        {
+            let a=20;
+            var b=1;
+            console.log(s);
+        }
+        console.log(a); //a is not defined
+        console.log(b);
+        console.log(s);*/
+      /*  var arr=[];
+        for(var i=0;i<2;i++){
+            arr[i]=function () {  //循环只到此处 函数在调用时才执行  因此i为循环结束后的值
+                console.log(i);
+            }
+        }
+        arr[0]();
+        arr[0](); //都输出2*/
+    //    变量i是全局的，函数执行时输出的都是全局作用域下的值
+    //     let arr=[];
+    //     for(let i=0;i<2;i++){
+    //         arr[i]=function () {
+    //             console.log(i);
+    //         }
+    //     }
+    //     arr[0]();//2
+    //     arr[1](); //1
+    //    每次循环都会产生一个块级作用域，每个块级作用域的变量都是不同的，函数执行时；
+    //    输出的是自己上一级作用域（循环产生的块级作用域）下的i值
+
+        // let a=0;
+        // console.log(this.a);//undefined
+        // console.log(window.a);  //undefined
+
+        //关于箭头函数的this
+        function fn1() {
+            //该函数由window调用，则this指向window
+            //该函数由obj调用，则this指向obj
+            console.log("fn1:",this);
+            return ()=>{
+                //箭头函数定义的位置的this=window
+                //箭头函数定义的位置的this=obj
+                console.log('=>:',this);
+            }
+        }
+        const f=fn1();
+        f();//window  window
+        const obj={name:"jlj"};
+        const f1=fn1.call(obj);
+        f1();   //obj  obj
+    //    箭头函数的this指向箭头函数定义位置的this
+        var age=80;
+        var obj1={
+            age:20,
+            say:()=>{
+                console.log(this.age);
+            }
+        };
+        obj1.say();//80
+        // 对象不会产生作用域，上面箭头函数的this=window
+
+        //rest和扩展运算符
+        function test(...args) {
+            let sum=0;
+            console.log(args);  //Array:[1, 2, 3, 4, 5]
+            args.forEach((item)=>{
+               sum+=item;
+               });
+            console.log(sum)
+        }
+    //    传入任意数量的参数
+        test(1,2,3,4,5);
+
+        let A=[1,2,3];
+        let B=[4,5,6];
+        console.log(...B);
+        console.log([...A,...B])  //[1, 2, 3, 4, 5, 6]合并数组
+        function test2(args1,args2) {
+            args1.push(...args2);
+            console.log(args1);
+        }
+        test2(A,B)  //[1, 2, 3, 4, 5, 6]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

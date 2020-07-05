@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选框练习</title>
+    <style>
+        body{
+            font-size: 24px;
+        }
+        .selector{
+            width: 500px;
+            height: 500px;
+            margin: 30px auto;
+            background-color: #7296cd;
+        }
+    </style>
+    <script>
+        //页面加载完成后在执行js代码
+
+        window.onload=function () {
+            //获取btn
+            function myClick(idStr,fun) {
+                var btn=document.getElementById(idStr);
+                btn.onclick=fun;
+            }
+
+            //对checkAllBtn 全选
+            myClick("checkAllBtn",function () {
+                var checkedAllBox=document.getElementById("checkedAllBox");
+                var items=document.getElementsByName("items")
+                for(var i=0;i<items.length;i++){
+                    items[i].checked=true;
+                }
+                checkedAllBox.checked=true;
+            })
+            //checkNoBtn 全不选
+            myClick("checkNoBtn",function () {
+                var checkedAllBox=document.getElementById("checkedAllBox");
+                var items=document.getElementsByName("items")
+                for(var i=0;i<items.length;i++){
+                    items[i].checked=false;
+                }
+                checkedAllBox.checked=false;
+            })
+            //checkOverBtn  反选
+            myClick("checkOverBtn",function () {
+                var items=document.getElementsByName("items")
+                for(var i=0;i<items.length;i++){
+                    if(items[i].checked==false)
+                        items[i].checked=true;
+                   else
+                       items[i].checked=false;
+                }
+                //全选时也要判断4个是否选中
+                checkedAllBox.checked=true;
+                for (var j=0;j<items.length;j++){
+                    //判断items是否全选
+                    if (items[j].checked!=true)
+                    // 一旦进入判断 证明不是全选状态
+                        checkedAllBox.checked=false;
+                    // break;
+                }
+
+            })
+            //sendMessage  点击按钮 将所有选中的多选框value弹出
+            myClick("sendMessage",function () {
+                var items=document.getElementsByName("items");
+                for(var i=0;i<items.length;i++){
+                    if(items[i].checked==true)
+                        alert(items[i].value)
+                }
+            })
+
+            //checkedAllBox 全选/全不选  若选中 则下面四个全部选中 否则全不选中
+
+            var checkedAllBox=document.getElementById("checkedAllBox");
+            checkedAllBox.onclick=function () {
+                var items=document.getElementsByName("items");
+                for(var i=0;i<items.length;i++){
+                    items[i].checked=checkedAllBox.checked;
+                }
+            }
+            // //实现checkedAllBox与items同步
+            var items=document.getElementsByName("items");
+            for(var i=0;i<items.length;i++){
+                items[i].onclick=function () {
+                    checkedAllBox.checked=true;
+                    for (var j=0;j<items.length;j++){
+                        //判断items是否全选
+                        if (items[j].checked!=true)
+                            // 一旦进入判断 证明不是全选状态
+                        checkedAllBox.checked=false;
+                        // break;
+                    }
+                }
+            }
+    }
+    </script>
+</head>
+<body>
+<div class="selector">
+    <form method="post" action="">
+        你喜欢的女明星是：<input type="checkbox" id="checkedAllBox" />全选/全不选
+        <br>
+        <input type="checkbox" name="items" value="倪妮"/>倪妮
+        <input type="checkbox" name="items" value="刘亦菲"/>刘亦菲
+        <input type="checkbox" name="items" value="喵总"/>喵总
+        <input type="checkbox" name="items" value="预言"/>预言
+    <br>
+    <input type="button" id="checkAllBtn"  value="全 选">
+    <input type="button" id="checkNoBtn"   value="全不选">
+    <input type="button" id="checkOverBtn" value="反 选">
+    <input type="button" id="sendMessage"  value="发 送">
+    </form>
+</div>
+</body>
+</html>

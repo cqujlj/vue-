@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>‘
+
+<input class="search" type="text">
+<button class="cancel-btn">取消事件</button>
+
+<script type="text/javascript">
+    var search = document.querySelector(".search")
+    var counter = 0;
+    function searchChange() {
+       counter++;
+       console.log("发送",counter,"ajax请求");
+    }
+
+
+    //一旦input里面发生输入 就会不断打印输出
+    // search.oninput = searchChange;
+
+//    使用防抖函数之后，只会在没有进行输入操作1s后触发该函数
+    // 对searchChange处理
+    var _searchChange = debounce(searchChange, 3000);
+    // 绑定oninput
+    search.oninput = _searchChange;
+
+
+
+
+    //    防抖函数
+    function debounce( fn , delay) {
+        let timer = null;
+        var that = this;
+        var _arguments = arguments;
+        return function () {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(function () {
+                //为了让返回的函数指向节点对象，而不是指向window
+                //返回一些参数，如果需要的话
+                fn.apply(that,_arguments);
+            },delay);
+        }
+
+    }
+
+    // 3.点击按钮 执行取消事件的函数
+    var cancelBtn = document.querySelector(".cancel-btn");
+    cancelBtn.onclick = function(event) {
+        _searchChange.cancel();  //取消绑定的事件
+    }
+</script>
+</body>
+</html>

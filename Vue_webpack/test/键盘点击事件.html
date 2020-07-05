@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            height: 100px;
+            width: 100px;
+            background-color: #cd9e9d;
+            position: absolute;
+            left:200px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var box1=document.getElementById("box1")
+            document.onkeydown=function (event) {
+                // console.log(event);
+                //    左37，上38，右边39，下40
+                var speed=10;
+                if(event.ctrlKey){
+                    speed=200;
+                }
+               switch (event.keyCode) {
+                   case 37:
+                       // alert("往左");
+                       box1.style.left=box1.offsetLeft-speed+"px";
+                       break;
+                   case 38:
+                       // alert("往上");
+                       box1.style.top=box1.offsetTop-speed+"px";
+                       break;
+                   case 39:
+                       box1.style.left=box1.offsetLeft+speed+"px";
+                       // alert("右边");
+                       break;
+                   case 40:
+                       box1.style.top=box1.offsetTop+speed+"px";
+                       // alert("下边");
+                       break;
+               }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box1">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组练习</title>
+    <script type="text/javascript">
+        var arr=['1','2','3','4','5','6']; //Array
+        console.log("arr",arr);
+        //转化成字符串 默认逗号,分隔
+        var str=arr.toString();  // string
+        console.log("str",str,typeof str);
+        console.log("join方法",typeof arr.join("-"));  // string  指定分隔符
+
+        //删除/添加（末尾）pop/push
+        console.log("arr.pop()",arr.pop());  //haha
+        //pop删掉数组的最后一个元素，并且把被删除的元素返回
+        console.log("arr.push",arr.push("NiNi"));  //6
+        //push在数组的最后添加一个元素，并且返回新数组的length
+
+        //删除添加头部shift/unshift
+        console.log("shift:",arr.shift());
+        //删除首个数组元素,返回被“位移出”的字符串
+        console.log("unshift:",arr.unshift("JLJ"));
+        //unshift在数组的首部添加一个元素，并且返回新数组的length
+
+        // length 属性提供了向数组追加新元素的简易方法
+        arr[arr.length]="newChar";
+        // arr[10]='new';//前面几个位置是empty
+
+        //concat拼接数据  任意多个数组  返回拼接后的数组
+        //不会更改现有数组
+        arr1=['a','b','c',];
+        arr2=['!','?','~',];
+        var conArr=arr.concat(arr1,arr2,['A','B','C']);
+        console.log("conArr:",conArr);
+
+        // splice() 方法可用于向数组添加、删除（不留空洞）新项
+        var newArr=arr.splice(2,2,"new1","new2");
+        //返回一个包含“已删除项”的数组
+        //第一个参数：定义了应添加新元素的位置-->从索引2开始添加数据
+        //第二个参数：定义应删除多少元素。
+        //其余参数（“new1”，“new2”）定义要添加的新元素。
+        var newArr=arr.splice(2,2);
+        console.log("newArr:",newArr);
+
+        console.log('------------------')
+        var stringArr=['1','2','3','4','5','6','7'];
+        console.log("stringArr:",stringArr)
+        //slice() 方法创建新数组
+        // 它不会改变源数组
+        var sliceArr1=stringArr.slice(3);
+        //返回切掉的3个元素的数组
+        console.log('sliceArr1:',sliceArr1);
+        console.log('------------------');
+        var sliceArr2=stringArr.slice(2,5);
+        //[2，5):从开始参数选取元素，直到结束参数（不包括）为止
+        console.log('sliceArr2:',sliceArr2);
+        console.log("stringArr:",stringArr)
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

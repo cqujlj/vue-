@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div自动移动</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #cd9e9d;
+            position: absolute;
+            left: 10px;
+            top: 50px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var box=document.getElementById("box");
+            var speed=10;  //表示移动速度
+            var dir=0;   //表示移动方向
+
+            setInterval(function () {
+                //  37:左
+                //  38:上
+                //  39:右
+                //  40:下
+                switch (dir) {
+                    case 37:
+                        // alert("往左");
+                        box.style.left=box.offsetLeft-speed+"px";
+                        break;
+                    case 38:
+                        // alert("往上");
+                        box.style.top=box.offsetTop-speed+"px";
+                        break;
+                    case 39:
+                        box.style.left=box.offsetLeft+speed+"px";
+                        // alert("右边");
+                        break;
+                    case 40:
+                        box.style.top=box.offsetTop+speed+"px";
+                        // alert("下边");
+                        break;
+                }
+            },50);
+            document.onkeydown=function (event) {
+                event=event || window.event;
+                if (event.ctrlKey){
+                    speed=100;
+                }
+                // else {
+                //     speed=10;
+                // }
+                //确定移动方向
+                dir=event.keyCode;
+                //松开按键不再移动 速度变回10
+                document.onkeyup=function () {
+                    dir=0;
+                    speed=10;
+                }
+
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

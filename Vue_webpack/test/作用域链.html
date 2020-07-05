@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域链</title>
+    <script type="text/javascript">
+        var a=10,b=20;
+        console.log("a:",a+"  b:",b);  //a: 10  b: 20
+        function fn1(x) {
+            var a=100,c=300;
+            console.log("a:",a+"  b:",b+"  c:",c);
+            function fn2() {
+                var a=1000,c=3000,d=4000;
+                console.log("a:",a+"  b:",b+"  c:",c+"  d:",d);
+            }
+            fn2();
+
+            // a: 1000  b: 20  c: 3000  d: 4000
+        }
+        fn1(100);  //a: 100  b: 20  c: 300
+
+        //面试题1
+        console.log("面试1");
+        var x=10;
+        function bar() {
+            console.log(x);
+        }
+        function show(f) {
+            var x=20;
+            console.log("show:",x);  //show: 20
+            //show函数内部的x不能在该作用于之外使用
+            f();
+        }
+        show(bar);  //10
+        //面试题2
+        console.log("面试2");
+        var foo=function () {
+            console.log(foo);  //输出函数
+        };
+        foo();
+        var obj={
+            foo2:function () {
+                // console.log(foo2);//报错 foo2 is not defined
+                //本身作用域内没有foo2，全局作用域也没有
+                console.log(this.foo2);//正确
+            }
+        };
+        obj.foo2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

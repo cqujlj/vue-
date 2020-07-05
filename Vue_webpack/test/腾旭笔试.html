@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   // var a=123;
+   // var b="123";
+   // var c=true;
+   // var d=null;
+   // var e;
+   // document.writeln(typeof a);  //number
+   // document.writeln(typeof b);  //string
+   // document.writeln(typeof c);  //boolean
+   // document.writeln(typeof d);   //object
+   // document.writeln(typeof e);  //undefined
+   //
+   //  //数值转换
+   //  var bb=Number(b);
+   // document.writeln(bb);
+   // var cc=Number(c);
+   // document.writeln(cc);//true->1
+   // var dd=Number(d);
+   // document.writeln(dd);  //null->0
+   // var ee=Number(e);
+   // document.writeln(ee);  //undefined ->NaN
+   //
+   // var str="123";
+   // var num1=parseInt(str);// parseInt(String)
+   // console.log(num1);
+   // var str1="abc";
+   // var num2=parseInt(str1);
+   // console.log(num2);   //->NaN
+   // var str3="abc123";
+   // var num3=parseInt(str3);
+   // console.log(num3);   //->NaN
+   // var str4="123scd21";
+   // var num4=parseInt(str4);
+   // console.log(num4);   //->123
+   //
+   //  var n=1;
+   //  var m=3;
+   //  console.log(n/m);   //0.3333333333333333
+   //
+   //  var i=0;
+   //  while(i<100){
+   //      console.log(i);
+   //     i++;
+   //  }
+
+   function sum(a,b){
+       console.log("typeof a:"+typeof a);
+       console.log("typeof b:"+typeof b);
+       return a+b;
+   }
+
+   console.log(sum(2,3));   //5
+   console.log(sum(2,3,4,5));//5
+   console.log(sum(2));//NaN  b:undefined
+   console.log(sum(2,"abc"));  //2abc
+
+   function sum2(a,b){
+       console.log("typeof a:"+typeof a);
+       console.log("typeof b:"+typeof b);
+       return a*b;
+   }
+
+   console.log(sum2(2,3));   //6
+   console.log(sum2(2,3,4,5));//6
+   console.log(sum2(2));//NaN   b:undefined
+   console.log(sum2(2,"abc"));  //NaN
+
+
+   console.log("--------------LeetCode0403--------------");
+   /**
+    * @param {string} str
+    * @return {number}
+    */
+   var myAtoi = function(string) {
+
+       var str=string.trim();
+       var res="";
+       let max=2147483647;
+       let min=-2147483648;
+       const reg= /^[0-9]*$/;
+       //判断第一个
+       if (str.length==0 || ( str.length==1 && !reg.test(str.charAt(0)))) {
+           res=0;
+       }
+       //如果第一个字符是+ - 数字 则循环判断
+       else if(str.charAt(0)=="-"||str.charAt(0)=="+"||reg.test(str.charAt(0))){
+           res=res+str.charAt(0);
+           // console.log(res);
+           for(let i=1;i<str.length;i++){
+               //如果是数字
+               if(reg.test(str.charAt(i))){
+                   res=res+str.charAt(i);
+               }
+               //如果不是数字
+               else{
+                   res=res;
+                   break;
+               }
+           }
+       }
+       else  res=0;
+
+       if(res=="-" ||res=="+" )  res=0;
+       else if(parseInt(res)>max) res=max;
+       else if(parseInt(res)<min )  res=min;
+       return res;
+       //
+       //     //如果是负数  返回后面的字符串进行判断
+       //     if(str.charAt(0)==="-"){
+       //         var s=str.substr(1);
+       //         if (isNaN(parseInt(s))){
+       //             res=0;
+       //             console.log("我第一位为‘-’，但我依然不是数字",res);
+       //         }
+       //         //如果是数字 负数>−2**31
+       //         else {
+       //             if((0-parseInt(s) )<min){
+       //                 res=min;
+       //                 console.log("我是数字 但我太小",res);
+       //             }
+       //             else
+       //                 res=0-parseInt(s);
+       //             console.log("我是负数",res);
+       //         }
+       //     }
+       //     //如果是正数数  判断是否是数字
+       //     else{
+       //             if(isNaN(parseInt(str))){
+       //                 res=0;
+       //                 console.log("我第一位就是字母",res);
+       //             }
+       //             else{
+       //                 if(parseInt(str)>max){
+       //                     res=max;
+       //                     console.log("我是数字 但我太大",res);
+       //                 }
+       //                 else{
+       //                     res=parseInt(str);
+       //                     console.log("我是正数",res);
+       //                 }
+       //             }
+       //         }
+       // return res;
+   };
+   console.log("Number.MAX_VALUE:",Math.pow(2,31)-1);
+   console.log("Number.MIN_VALUE:",-Math.pow(2,31));
+   var str1= "words and 987";
+   var str2= "3342";
+   var num=myAtoi(str2,str1);
+
+   console.log(num);
+</script>
+</body>
+</html>

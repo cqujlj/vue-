@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    class Stack{
+        constructor(){
+            this.items=[];
+        }
+        //栈的一些功能
+        //push 压栈
+        push(element){
+            this.items.push(element);
+        }
+        //出栈，并返回被弹出的元素
+        pop(){
+           return this.items.pop();
+        }
+           //查看栈顶元素 返回栈顶元素  不修改栈
+        peak(){
+            return this.items[this.items.length-1];
+        }
+            //判断是否为空
+        isEmpty(){
+            return this.items.length === 0;
+       }
+       size(){
+           return this.items.length;
+       }
+
+    }
+
+//    创建栈元素
+//     const  stack=new Stack();
+    //     stack.push("A");
+    //     stack.push("B");
+    //     stack.push("C");
+    //     stack.push("D");
+    //     console.log(stack.items);
+    //     console.log(stack.pop());
+    //     console.log(stack.peak());
+    //     console.log(stack.pop());
+    //     console.log(stack.pop());
+    //     console.log(stack.pop());
+    //     console.log(stack.isEmpty());
+    //     console.log(stack.size());
+
+//    十进制-->二进制
+    function decTobin(num) {
+        const  stack=new Stack();
+        while(num>0){
+            let remainder=num%2;
+            num=Math.floor(num/2);
+            stack.push(remainder);
+        }
+        //拼接字符串
+        let binString="";
+        while (!stack.isEmpty()){
+            //不为空 弹出元素
+            binString+=stack.pop();
+        }
+        return binString;
+    }
+    let res1=decTobin(100);
+    console.log("二进制是：",res1); // 1100100
+    let res2=decTobin(520);
+    console.log("二进制是：",res2); // 1000001000
+    let res3=decTobin(1024);
+    console.log("二进制是：",res3); //10000000000
+</script>
+</body>
+</html>

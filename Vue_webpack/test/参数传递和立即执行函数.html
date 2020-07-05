@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+// js在调用函数时候传递的变量参数，是值传递还是引用传递
+// 理解1:值 (基本/地址值)传递
+//理解2: 可能是值传递，也可能是引用传递（地址值）
+//        值传递
+        var a=3;
+        function add(a) {
+            a=a+1;
+            console.log(a);   //4
+            return a;
+        }
+        var b=add(a);
+        console.log(a); //3
+        console.log(b); //4
+    //    引用传递 地址值
+        function fn1(obj) {
+            obj.name="Hello";
+            console.log(obj.name);
+        }
+        var obj1={name:"Tom"};
+        var obj2={name:"Jenniy"};
+        fn1(obj1);   //==>Hello  传递的地址
+        fn1(obj2);   //==>Hello
+
+
+    //    立即执行函数
+        (function () {
+            var m=3;
+            console.log(m+3);  //6
+        })();//立即执行函数  不用调用
+        var m=4;
+        console.log("m:"+m) ; //4
+
+
+        (function () {
+            var j=1;
+            function test() {
+                console.log(++j);
+            }
+            window.$=function() {//向外暴露一个全局函数
+                return{
+                    test:test
+                }
+            }
+        })();//立即执行
+        //$是一个函数 $执行后返回的是一个对象
+        $().test();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var s="hello";
+    for(let i=0;i<5;i++){
+        // console.log(i);
+        // let i=222;
+        console.log(s[i]);// 10个222
+    }
+    console.log(foo);  // undefined
+    var foo="abc";
+
+    // console.log(foo1);  // ReferenceError
+    // let foo1="abc";
+
+
+    {
+        {
+            let name="jlj";
+            {
+                let name="lwj ";
+                console.log(name);
+            }
+        }
+    }
+
+    function f() {
+        console.log("i am outside");
+    }
+    ( function f1() {
+        if (true){
+           let f= function f() {
+                console.log("i am inside");
+            }
+            console.log(f);//inside
+        }
+        console.log(f);//outside
+    }());
+
+    f();//outside
+
+
+    let nums=["A","B","C"];
+    console.log(nums.valueOf());// ["A","B","C"]
+    console.log(nums.toString());//A,B,C
+    console.log(nums.toLocaleString());  //JA,B,C
+    console.log(nums); // ["A","B","C"]
+    //join():指定数组输出的分隔符 默认使用“，”分隔
+    console.log(nums.join(" || "));  //A || B || C
+     nums.push("D","E");//在末尾添加元素
+    console.log(nums)  //["A","B","C", "D", "E"]
+     let count=nums.push("F");
+    console.log(count); //6 <= nums.push()  返回数组长度
+     let ch=nums.pop();//nums.pop()返回末尾被删除的元素
+    console.log(nums); //["A","B","C", "D", "E"]
+    console.log(ch);//  F
+
+    let ch1=nums.shift();//删除头部元素  并返回
+    console.log(nums); //["B","C", "D", "E"]
+    console.log(ch1);// Jack
+    let count1=nums.unshift("G");
+    //unshift("G")往头部添加元素，并且返回数组长度
+    console.log(nums); //["G", "B","C", "D", "E"]
+    console.log(count1);// 5
+
+
+    let values=[1,2,4,8,5,6,10];
+    console.log(typeof  values.valueOf());//返回的是数值类型的对象 object
+    console.log(  values.reverse());// object [10, 6, 5, 8, 4, 2, 1]逆转数组
+    console.log(  values.sort());//  object[1, 10, 2, 4, 5, 6, 8] 默认升序排序
+    //sort()会先调用toString()方法，然后对字符串进行比较,因此会出现问题
+    function sortNumber(a,b)
+    {
+        return a-b; //降序排序
+        // return b-a; //降序排序
+    }  //使用一个排序函数
+    console.log(values.sort(sortNumber)); //object //[1, 2, 4, 5, 6, 8, 10]
+//slice方法：基于当前数组创建新数组
+    let a=[1,2,3,4,5,6,7];
+    //a都不会发生变化
+    let a1=a.slice(3);  //返回从Index=3开始的元素
+    console.log(a1);  //[4, 5, 6, 7]
+
+    let a2=a.slice(1,4);  //返回从Index=1开始的2个元素
+    console.log(a2);  //[2,3,4]
+    //splice()删除、替换、插入
+
+    let b=["a","b","c","d","e"];
+    b.splice(1,2);//删除从index=1开始的2个元素
+    console.log(b) ; // ["a", "d", "e"]
+    b.splice(2,0,"m","n");//在index=2之后插入指定元素
+    console.log(b) ;// ["a", "d", "m", "n", "e"]
+    b.splice(2,2,"p","q"); //替换==删除n个 插入n个
+    console.log(b);  //["a", "d", "p", "q", "e"]
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            //1 1 2 3 5 8 13 21....
+            // 由于单线程原因，
+            // 但input的数字太大，会运行很久，并且计算过程中无法操作，
+            // 于是要把计算里大的代码放入分线程
+            // function fibonacci(n) {
+            //     return n<=2? 1:fibonacci(n-1)+fibonacci(n-2);
+            // }
+            var btn=document.getElementById("btn");
+            var input=document.getElementById("number");
+            btn.onclick=function () {
+                //在主线程中计算
+                var number=input.value;
+                // var result=fibonacci(number);
+                // alert(result);
+
+                //在分线程中计算
+                //创建一个worker对象并向他传递将在新线程执行的脚本url
+                var worker=new Worker("js/webWork.js");
+                //向分线程发送消息
+                worker.postMessage(number);
+                console.log("主线程发送数据："+number);
+                //从分线程接受结果
+                worker.onmessage=function (event) {
+                    alert("主线程打印输出："+event.data);
+                };
+                console.log("主线程里面的this："+this);
+                //[object HTMLButtonElement]
+            };
+            console.log(" this："+this); // Window]
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input id="number" type="text" placeholder="数值">
+    <input id="test" type="text" placeholder="数值">
+    <button id="btn">计算</button>
+</div>
+</body>
+</html>

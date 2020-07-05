@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script type="text/javascript" src="js/myModules.js"></script>
+    <script type="text/javascript" src="js/myModule2.js"></script>
+    <script type="text/javascript">
+// 模块的使用者，只需要通过模块暴露的对象调用方法来实现
+      /*  var fn=myModule();
+        fn.upper();
+        fn.lower();
+        myModule2.getMsg();
+        myModule2.setMsg("i am lwj" );
+
+
+        window.onload=function () {
+            var btns=document.getElementsByTagName("button")
+            console.log(btns); //HTMLCollection(3)
+            for (var i=0;i<btns.length;i++){
+                var btn=btns[i];
+                btn.index=i; //将每个btn的下标绑到每个btn上  或者使用闭包
+                btn.onclick=function () {
+                    console.log("第"+(this.index+1)+"个");
+                    //输出全是：第4个
+                }
+            }
+
+            for (var j=0;j<5;j++){
+                btns[0].onclick=function () {
+                    console.log("j:",j); //5
+                }
+            }
+
+            for (var k=0;k<btns.length;k++){
+                //闭包
+                (function (k) {
+                    console.log("k：",k);// 0 1 2
+                    var btn=btns[k];
+                    btn.onclick=function () {
+                        console.log("k",k)  // 0 1 2
+                    }
+                })(k)
+            }
+        }
+        //常见的闭包
+        function myFun() {
+            var mya=2;  //局部变量
+            //产生1个闭包：闭包在函数定义时产生 不是调用时
+            function myFun2() {
+                mya++;   //调用外部函数的变量
+                console.log("mya:"+mya);
+            }
+            function myFun3() {
+                mya--;   //调用外部函数的变量
+                console.log("mya:"+mya);
+            }  //没有被引用  则会被释放
+            return myFun2;
+        }
+        var myf=myFun();  //全局代码
+        //因为myFun返回的是myFun2，因此myf指向函数myFun2指向的函数，myFun2被销毁，但函数对象还存在
+        // 所以  myf()是在调用myFun2();
+        myf(); //3
+        myf();  //4  在全局间接访问内部函数
+
+
+        //常见的闭包2 将函数作为参数
+        function showDelay(msg,time) {
+            setTimeout(function () {
+                console.log(msg);
+            },time);
+        }
+        showDelay("hello",2000);
+
+        */
+
+
+//  面试题1
+        var name="the window";
+        var object={
+            name:" the object",
+            getNameFunc:function () {
+                return function () {
+                    console.log(this); //window
+                    return this.name;  //访问window的name  无闭包
+                };
+            }
+        };
+        console.log(object.getNameFunc()());  //==>the window
+        //object.getNameFunc()是一个函数 return this.name;
+        //执行function () {return this.name;}的对象是window
+
+// 面试题2
+        var name2="the window";
+        var object2={
+            name2:" the object",
+            getNameFunc2:function () {
+                var that=this;  //这里的this是object2，则that是object2
+                return function () {
+                    console.log(this); //window
+                    console.log(that); //object2
+                    return that.name2;  //object2的name  存在闭包
+                };
+            }
+};
+        console.log(object2.getNameFunc2()());  //the object
+    //面试题3
+    //解释：闭包是n
+        function myFunc(n,o) {
+            console.log(o); //输出闭包的值 o对应下面的n
+            return{
+                myFunc:function (m) {
+                    return myFunc(m,n);
+                }
+            };
+        }
+
+    var r=myFunc(0);r.myFunc(1); r.myFunc(2);r.myFunc(3);
+    //undefined 0 0 0
+//产生了 3个闭包 输出的是闭包的值
+//输入参数只有0 则第二个参数没有输入 所以undefined
+    var s=myFunc(0).myFunc(1).myFunc(2).myFunc(3);//undefined 0 1 2
+    var t=myFunc(0).myFunc(1);t.myFunc(2);t.myFunc(3);//undefined 0 1 1
+    </script>
+</head>
+<body>
+<button >测试1</button>
+<button >测试2</button>
+<button >测试3</button>
+</body>
+</html>

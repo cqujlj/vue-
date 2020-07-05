@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文字符串</title>
+    <script type="text/javascript">
+
+//  给定一个字符串s，你可以从中删除一些字符，使得剩下的串是一个回文串。
+//  如何删除才能使得回文串最长呢？
+// 输出需要删除的字符个数
+//先求s的反串reverse，然后求他们的最长的公共子序列，要删除的字符个数就能知道
+        /*var line="abcda";
+        var lines=[];
+        for(var i=0;i<line.length;i++){
+            lines[i]=line.charAt(i);
+        }
+        var res=[];
+       for(var j=0;j<lines.length;j++){
+           for (var k=i+1;k<lines.length;k++){
+               if(lines[j]===lines[k]){
+                   res.splice(j,0,lines[j]);
+                   res.splice(lines.length-j-1,lines[k]);
+                   break;
+               }
+           }
+       } console.log("res:",res);*/
+        // 把一个字符串的大写字母放到字符串的后面，
+        // 各个字符的相对位置不变，
+        // 且不能申请额外的空间
+        // 1、申请额外空间版本（不额外申请可以用冒泡排序）
+        /*var line="hxKLAGLLzPyTxsFsrUnnSKQBHdQQrOyaEYJRgiJbHIDXFcQkFmIhPNKIBfHxXDBdKAvgZiBLVwnlxJAHmttsSJkZhSmQneNVoKoIYZRjPqsrFFaaqZbyNyeRjVKVFrCGdfycidTqbyQcpAtdRGzzBAaKoqybWMOyhrCQdwcRwQQpQavTnAbjriVwxJOrTYJVGYSWzKYeNAGqBzkJLucabNYvyVFxAGKLfqHXNttaqZfncEdTroGMzZnDbvZBBaRbJvuYIvlWrKaaGrvtyxrsCUOqxdwCrmVEeDrLKZKFJVRmrLsmbmOGUJyfdZIrFhuSwJQGRTYMLxKQNMaCavatlQIRZmFQvyWgQTVENxUcPKQCaUQbjyfaNuwoNdTBNldgrtPUcQodqsuJOdDpUczJWCZaasDdEYJkvituMHrCmZQSlRjIefVisatIUtfxBeKnHPyvWUKzRliFsYWgeXogiEgXDbfxAybwFuqFyEvjfIHEPDPKqEiGUtZhdDIDBGKpvBFyqHeEEhAToAbqHEpIdIhIGBtWjGHiQRctZxQQYkfFoWUbqZyIcjRPQBilHrnqNBzFmoRUYCSrGkawJCcOrMceegISpIpSGVjbngWVMTYtGoAlQFPFyOFAxndJZNfKDTwFIxisKTjyjchidXpYgLfoBOLriuIAHmAbQwoHBgbdUYBHlDQGZJASsHszOEPthLVnYbNqWegmONexfdsTVYHgtDmlyugefOBsqmgNDBoxkkhVHfvrYooVOyxDJQJLjYSngksbTopoPJFsKQzHePLukXyYTYCeW";
+       console.log(line.length)
+        var lines=[];
+        for (var i=0;i<line.length;i++){
+            lines[i]=line.charAt(i);
+
+        }
+        var UpperStr=[];
+        for(var j=0;j<lines.length;j++){
+            //是大写字母就抽出来存到另一个数据
+            if(/^[A-Z]+$/.test(lines[j]) ){
+                UpperStr.push(lines.splice(j,1).toString());
+                //从原数组删除并添加到大写字母数组中
+                j--;
+            }
+        }
+        console.log(lines.concat(UpperStr).join(''));
+        console.log("result:",lines.concat(UpperStr).join('').length);
+*/
+
+       /* var arr=[45,32,12,45,5,6];
+        arr.sort(function (a,b) { return b-a;  });//降序排序45, 45, 32, 12, 6, 5
+        var res=[];
+        for( var i =0; i<arr.length; i++){
+            for( var j =i+1; j<arr.length; j++){
+                res.push(arr[i]-arr[j]);
+            }
+        }
+        res.sort(function (a,b) {return b-a; });
+        var maxCount=1;
+        var minCount=1;
+        for(var k=1;k<res.length;k++) {
+            if(res[k]===res[0])maxCount++;
+            else break;
+        }
+        for(var k=res.length-2;k>=0;k--) {
+            if(res[k]===res[res.length-1]) minCount++;
+            else break;
+        }
+        console.log(maxCount,minCount);
+        */
+console.log("hxzyxssrnndryagibckmhfxdvgiwnlxmttskhmneoojqsraaqbyyejrdfycidqbycptdzzaoqybyhrdwcwpavnbjriwxrzeqzkucabvyxfqttaqfncdroznbvabvuvlraarvtyxrsqxdwrmermrsmbmyfdrhuwxaavatlmvygxcabjyfauwodldgrtcodqsudpczaasdkviturmljefisattfxenyvzlisgeogigbfxybwuqyvjfqithdpvyqehobqpdhtjictxkfobqycjilrnqzmorkawcrceegppjbngtolyxndfwxisjyjchidpgforiumbwogbdlsszthnbqegmexfdsgtmlyugefsqmgoxkkhfvrooyxjngksboposzeukyeKLAGLLPTFUSKQBHQQOEYJRJHIDXFQFIPNKIBHXDBKAZBLVJAHSJZSQNVKIYZRPFFZNRVKVFCGTQARGBAKWMOCQRQQQTAVJOTYJVGYSWKYNAGBJLNYVFAGKLHXNZETGMZDZBBRJYIWKGCUOCVEDLKZKFJVRLOGUJZIFSJQGRTYMLKQNMCQIRZFQWQTVENUPKQCUQNNTBNPUQJODUJWCZDEYJMHCZQSRIVIUBKHPWUKRFYWXEXDAFFEIHEPDPKEGUZDIDBGKBFHEEATAHEIIIGBWGHQRZQQYFWUZIRPQBHNBFRUYCSGJCOMISISGVWVMTYGAQFPFOFAJZNKDTFIKTXYLBOLIAHAQHBUYBHDQGZJASHOEPLVYNWONTVYHDOBNDBVHYVODJQJLYSTPJFKQHPLXYTYCW")
+
+var str='hxKLAGLLzPyTxsFsrUnnSKQBHdQQrOyaEYJRgiJbHIDXFcQkFmIhPNKIBfHxXDBdKAvgZiBLVwnlxJAHmttsSJkZhSmQneNVoKoIYZRjPqsrFFaaqZbyNyeRjVKVFrCGdfycidTqbyQcpAtdRGzzBAaKoqybWMOyhrCQdwcRwQQpQavTnAbjriVwxJOrTYJVGYSWzKYeNAGqBzkJLucabNYvyVFxAGKLfqHXNttaqZfncEdTroGMzZnDbvZBBaRbJvuYIvlWrKaaGrvtyxrsCUOqxdwCrmVEeDrLKZKFJVRmrLsmbmOGUJyfdZIrFhuSwJQGRTYMLxKQNMaCavatlQIRZmFQvyWgQTVENxUcPKQCaUQbjyfaNuwoNdTBNldgrtPUcQodqsuJOdDpUczJWCZaasDdEYJkvituMHrCmZQSlRjIefVisatIUtfxBeKnHPyvWUKzRliFsYWgeXogiEgXDbfxAybwFuqFyEvjfIHEPDPKqEiGUtZhdDIDBGKpvBFyqHeEEhAToAbqHEpIdIhIGBtWjGHiQRctZxQQYkfFoWUbqZyIcjRPQBilHrnqNBzFmoRUYCSrGkawJCcOrMceegISpIpSGVjbngWVMTYtGoAlQFPFyOFAxndJZNfKDTwFIxisKTjyjchidXpYgLfoBOLriuIAHmAbQwoHBgbdUYBHlDQGZJASsHszOEPthLVnYbNqWegmONexfdsTVYHgtDmlyugefOBsqmgNDBoxkkhVHfvrYooVOyxDJQJLjYSngksbTopoPJFsKQzHePLukXyYTYCeW';
+var lines=str.split("");
+if(1<=lines.length && lines.length<=1000){
+    var temp;
+    var count=0;
+    for(var j=0;j<lines.length-count;j++){
+        //是大写字母就抽出来存到另一个数据
+        if(/^[A-Z]+$/.test(lines[j]) ){
+            lines.push(lines.splice(j,1).toString());
+            //从原数组删除并添加到大写字母数组中
+            count++;
+            j--;
+        }
+    }
+    console.log(lines.join(''));
+}
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

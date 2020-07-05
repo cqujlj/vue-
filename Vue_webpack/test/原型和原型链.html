@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型与原型链</title>
+    <script type="text/javascript">
+
+       /* function fun(){// 内部语句：this.prototype={}  默认指向一个空对象
+            this.test1=function () {
+                console.log("我是fun里面的方法")
+            }
+        }
+        console.log(fun.prototype , typeof fun.prototype); //{constructor: ƒ}
+
+        //添加方法
+        fun.prototype.test2=function () {
+            console.log("i am printFun")
+        };
+        //在原型中添加属性
+        fun.prototype.flag=true;
+        //显式原型
+        console.log(fun.prototype); //{flag: true, printFun: ƒ, constructor: ƒ}
+        //创建一个实例  内部语句：this.__proto__=fun.prototype
+        var obj=new fun();
+        // 隐式原型:每个实例对象都有_proto_，称为隐式原型对象
+        console.log(obj.__proto__);
+        console.log(fun.prototype===obj.__proto__)  //true
+
+
+        //通过原型链  调用fun()里面的函数
+        // 过程：在obj实例对象中找test1()，没找到；
+        //      去obj.__proto__中找，没找到，去
+        obj.test1();
+        obj.test2();  //fun的任何实例对象都可以访问fun原型对象中的属性和方法
+
+        // 过程：在obj实例对象中找test1()，没找到；
+        //      去obj.__proto__中找，没找到，
+        //去Fn中找  直到找到Object的原型对象（原型链尽头）找到toString
+        console.log("(obj.toString():"+obj.toString());
+        console.log(obj.test3)  //undefined  没有该属性
+        // console.log(obj.test3())// 报错 没有该方法
+//原型面试题1
+        function A() {
+        }
+        A.prototype.n=1;
+        //b的__proto__指向n=1的原型
+        var b=new A();
+        A.prototype= {
+            n: 2,
+            m: 3,
+        };//A改变原型指向
+        var c=new A();
+        //b的__proto__指向n=2 m=3的新原型
+        console.log(b.n,  b.m,  c.n,c.m)
+                  // 1 undefined  2    3
+
+        */
+//原型面试题2
+        var F=function () {};
+            Object.prototype.a=function (){
+             console.log("a()");
+            };
+            Function.prototype.b=function (){
+                console.log("b()");
+            };
+            var f=new F();
+       console.log(Object.prototype)//{a: ƒ, b: ƒ, constructor: ƒ,.....}
+            f.a();  //a()
+            f.b(); //f.b is not a function
+            F.a(); //a()
+            F.b(); //a()
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
